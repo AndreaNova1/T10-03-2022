@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/', [\App\Http\Controllers\EstudianteController::class, 'index'])->name('estudiante.index');
+Route::get('/create', [\App\Http\Controllers\EstudianteController::class, 'create'])->name('estudiante.create');
+Route::get('/edit', [\App\Http\Controllers\EstudianteController::class, 'edit'])->name('estudiante.edit');
